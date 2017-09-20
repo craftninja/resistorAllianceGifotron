@@ -65,6 +65,7 @@ try:
             #display text over preview screen
             GPIO.output(lightRing, True)
             camera.annotate_text = 'Get Ready!'
+            sleep(2)
             camera.annotate_text = ''
             #take 6 photos
             for i, filename in enumerate(camera.capture_continuous('images/image{counter:02d}.jpg')):
@@ -79,11 +80,13 @@ try:
 
             #upload photo to Tumblr
             client.create_photo(
-		'ResistorAlliance',	#update to your username
-		state="published",
-		tags=["ResistorAlliance", "gifotron"],
-		data="images/animation.gif")
+                'ResistorAlliance',	#update to your username
+                state="published",
+                tags=["ResistorAlliance", "gifotron"],
+                data="images/animation.gif"
+            )
             print("uploaded") #let us know GIF has been uploaded
+
             #turn on uploaded LED and play meow samples
             GPIO.output(lightRing, True)
             sleep(0.2)
