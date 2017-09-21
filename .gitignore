@@ -2,4 +2,5 @@ keys_tumblr.py
 keys_twitter.py
 images/*.jpg
 images/*.gif
+!images/test.jpg
 *.pyc
