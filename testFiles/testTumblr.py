@@ -1,11 +1,11 @@
 import pytumblr
-from tumblr_keys import *
+from keys_tumblr import *
 
 client = pytumblr.TumblrRestClient(
-    consumer_key,
-    consumer_token,
-    token_key,
-    token_secret
+    tum_consumer_key,
+    tum_consumer_token,
+    tum_token_key,
+    tum_token_secret
 )
 
 try:

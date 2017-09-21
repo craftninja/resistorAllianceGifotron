@@ -5,7 +5,7 @@ import os
 import picamera
 import pytumblr
 from fractions import Fraction
-from tumblr_keys import *
+from keys_tumblr import *
 
 #create variables to hold commands
 makeVid = "convert -delay 50 images/image*.jpg images/animation.gif"
@@ -18,11 +18,11 @@ lightRing = 27
 button = 18
 
 # AuthenticateS via OAuth, copy from https://api.tumblr.com/console/calls/user/info
-client = pytumblr.TumblrRestClient(
-    consumer_key,
-    consumer_token,
-    token_key,
-    token_secret
+tumblr = pytumblr.TumblrRestClient(
+    tum_consumer_key,
+    tum_consumer_token,
+    tum_token_key,
+    tum_token_secret
 )
 
 #set up pins
@@ -79,7 +79,7 @@ try:
             print('uploading') #let us know photo is about to start uploading
 
             #upload photo to Tumblr
-            client.create_photo(
+            tumblr.create_photo(
                 'ResistorAlliance',	#update to your username
                 state="published",
                 tags=["ResistorAlliance", "gifotron"],
