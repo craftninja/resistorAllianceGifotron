@@ -8,8 +8,6 @@ twit = twitter.Api(
     access_token_secret = twit_token_secret
 )
 
-
-
 try:
     twit.PostMedia(
         'testing Gifotron',

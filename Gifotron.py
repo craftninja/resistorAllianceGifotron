@@ -6,6 +6,7 @@ import picamera
 import pytumblr
 from fractions import Fraction
 from keys_tumblr import *
+from keys_twitter import *
 
 #create variables to hold commands
 makeVid = "convert -delay 50 images/image*.jpg images/animation.gif"
@@ -23,6 +24,13 @@ tumblr = pytumblr.TumblrRestClient(
     tum_consumer_token,
     tum_token_key,
     tum_token_secret
+)
+
+twit = twitter.Api(
+    consumer_key = twit_consumer_key,
+    consumer_secret = twit_consumer_secret,
+    access_token_key = twit_token_key,
+    access_token_secret = twit_token_secret
 )
 
 #set up pins
@@ -84,6 +92,10 @@ try:
                 state="published",
                 tags=["ResistorAlliance", "gifotron"],
                 data="images/animation.gif"
+            )
+            twit.PostMedia(
+                'testing Gifotron',
+                'images/animation.gif'
             )
             print("uploaded") #let us know GIF has been uploaded
 
