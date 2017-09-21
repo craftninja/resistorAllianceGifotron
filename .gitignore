@@ -1,5 +1,6 @@
-keys_tumblr.py
+keys_facebook.py
 keys_twitter.py
+keys_tumblr.py
 images/*.jpg
 images/*.gif
 !images/test.jpg
