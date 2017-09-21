@@ -4,6 +4,7 @@ from time import sleep
 import os
 import picamera
 import pytumblr
+import twitter
 from fractions import Fraction
 from keys_tumblr import *
 from keys_twitter import *
@@ -94,7 +95,7 @@ try:
                 data="images/animation.gif"
             )
             twit.PostMedia(
-                'testing Gifotron',
+                '#ResistorAlliance #gifotron',
                 'images/animation.gif'
             )
             print("uploaded") #let us know GIF has been uploaded
