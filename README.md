@@ -3,7 +3,9 @@
 ### Setup:
 
 1. copy `tumblr_keys_example.py` to `tumblr_keys.py`
+1. copy `keys_twitter_example.py` to `keys_twitter.py`
 1. log into a tumbler account and get the required keys listed in the example file
+1. log into a twitter account and get the required keys listed in the example file
 1. install necessary python libs
 
   ```
@@ -12,6 +14,7 @@
   sudo apt-get install mpg321 -y
   sudo apt-get install python-RPi.gpio python3-RPi.gpio
   sudo pip install pytumblr
+  sudo pip install python-twitter
   ```
 
 1. testing stuff
@@ -20,7 +23,11 @@
     * `python testFiles/camera.py`
   1. test tumblr integration:
     * the module with the tumblr keys and the test file using those keys need to be in the same directory 😔 so:
-    * move the test file to root and `python testPyTumblr.py`
+    * move the test file to root and `python testTumblr.py`
+    * and move it back to declutter root 🤷🏽‍♀️
+  1. test twitter integration:
+    * the module with the twitter keys and the test file using those keys need to be in the same directory 😔 so:
+    * move the test file to root and `python testTwitter.py`
     * and move it back to declutter root 🤷🏽‍♀️
 1. connect hardware as follows:
   * button switch - one lead to ground, one lead to GPIO 18
