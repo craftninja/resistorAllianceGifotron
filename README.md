@@ -39,7 +39,7 @@
       * move the test file to root and `python testTwitter.py`
       * and move it back to declutter root 🤷🏽‍♀️
 1. connect hardware as follows:
-    * button switch - one lead to ground, one lead to GPIO 18
+    * button switch - one lead to 3.3 volts, one lead to GPIO 18
     * button led - ground lead to ground, positive lead to resistor to GPIO 17
     * lightRing (to be constructed, right now one led) - cathode to ground, anode to resistor to GPIO 27
 
