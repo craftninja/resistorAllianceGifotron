@@ -79,6 +79,7 @@ try:
             #take 6 photos
             for i, filename in enumerate(camera.capture_continuous('images/image{counter:02d}.jpg')):
                 os.system(cameraClick)
+                os.system(cameraClick)
                 if i == 5:
                     break
                 sleep(2)
