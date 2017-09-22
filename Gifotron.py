@@ -79,10 +79,9 @@ try:
             #take 6 photos
             for i, filename in enumerate(camera.capture_continuous('images/image{counter:02d}.jpg')):
                 os.system(cameraClick)
-                os.system(cameraClick)
                 if i == 5:
                     break
-                sleep(2)
+                sleep(1)
             camera.stop_preview() #stop preview
             GPIO.output(lightRing, False)
             os.system(makeVid) #send command to convert images to GIF
