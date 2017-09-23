@@ -8,7 +8,13 @@
 1. LEDs for lighting up your beautiful face - we will be using 24x 10mm white leds in a ring ~14" across
     * We prototyped with one LED
 1. [Arcade Button with LED](https://www.adafruit.com/product/3490)
-1. Optional - laser cut the file in [svgs_for_housing](./svgs_for_housing)
+1. Optional assembly:
+    * laser cut the file in [svgs_for_housing](./svgs_for_housing)
+      * If I were to cut this out again, I would move the large button cutout up about an inch to allow the RPi to rest on the 2x4 (5" cut)
+    * cut a 2x4 to 5" and drill holes all the way through the same distance apart as the two holes below the button hole
+    * one threaded insert to mount 2x4 piece onto a tripod, 1/4"-20 Internal Threads
+    * 2 bolts, nuts, and 4 washers to bolt the 2x4 piece to the back piece
+    * 4 bolts, nuts and spacers for the 4 holes binding the two pieces together
 
 ### Setup:
 
