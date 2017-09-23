@@ -89,7 +89,7 @@ try:
 
             #upload photo to Tumblr
             tumblr.create_photo(
-                'ResistorAlliance',	#update to your username
+                tum_user_name,
                 state="published",
                 tags=["ResistorAlliance", "gifotron"],
                 data="images/animation.gif"

@@ -8,6 +8,7 @@
 1. LEDs for lighting up your beautiful face - we will be using 24x 10mm white leds in a ring ~14" across
     * We prototyped with one LED
 1. [Arcade Button with LED](https://www.adafruit.com/product/3490)
+1. Optional - laser cut the file in [svgs_for_housing](./svgs_for_housing)
 
 ### Setup:
 
