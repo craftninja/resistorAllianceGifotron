@@ -17,7 +17,7 @@ cameraClick = "mpg321 sounds/camera-shutter-click-01.mp3"
 #create variables to hold pin numbers
 buttonLight = 17
 lightRing = 27
-button = 18
+buttonSwitch = 18
 
 # AuthenticateS via OAuth, copy from https://api.tumblr.com/console/calls/user/info
 tumblr = pytumblr.TumblrRestClient(
@@ -36,7 +36,7 @@ twit = twitter.Api(
 
 #set up pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(buttonSwitch, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(buttonLight, GPIO.OUT)
 GPIO.setup(lightRing, GPIO.OUT)
 
@@ -49,7 +49,7 @@ camera.annotate_foreground = picamera.Color(y=0.2, u=0, v=0) #set color of annot
 try:
     #read button
     while True:
-        input_state = GPIO.input(button)
+        input_state = GPIO.input(buttonSwitch)
         if input_state == True:
             print('Button Pressed')
             GPIO.output(buttonLight, True)
