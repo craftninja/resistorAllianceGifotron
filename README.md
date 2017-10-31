@@ -1,5 +1,12 @@
 # README
 
+### Run it!
+
+1. make sure your system datetime is accurate:
+    1. `$ date`
+    1. if that is not correct, `$ sudo date --set "Tues Oct 31 18:36:13 MDT 2017"` or similar
+1. open a shell and run `python Gifotron.py`
+
 ### Stuff you need
 
 1. Raspberry Pi - we are using the RPi 3 Model B
