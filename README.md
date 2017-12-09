@@ -2,6 +2,9 @@
 
 ### Run it!
 
+1. If you need to ssh in to the pi...
+    * on the pi `hostname -I`
+    * on your computer `ssh pi@<hostname>` and enter pw for pi user
 1. make sure your system datetime is accurate:
     1. `$ date`
     1. if that is not correct, `$ sudo date --set "Tues Oct 31 18:36:13 MDT 2017"` or similar
