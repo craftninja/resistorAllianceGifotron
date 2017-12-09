@@ -55,13 +55,7 @@ try:
             GPIO.output(buttonLight, True)
             sleep(0.5)
             GPIO.output(buttonLight, False)
-            sleep(0.2)
-            #if pressed blink button LED at two speeds
-            for i in range(3):
-                GPIO.output(buttonLight, True)
-                sleep(1)
-                GPIO.output(buttonLight, False)
-                sleep(1)
+            sleep(0.25)
             for i in range(3):
                 GPIO.output(buttonLight, True)
                 sleep(.25)
@@ -71,33 +65,35 @@ try:
             #start camera preview
             camera.start_preview()
 
-            #display text over preview screen
             GPIO.output(lightRing, True)
-            camera.annotate_text = 'Get Ready!'
             sleep(2)
-            camera.annotate_text = ''
             #take 6 photos
             for i, filename in enumerate(camera.capture_continuous('images/image{counter:02d}.jpg')):
                 os.system(cameraClick)
+                GPIO.output(lightRing, False)
                 if i == 5:
                     break
-                sleep(1)
+                sleep(.25)
+                GPIO.output(lightRing, True)
+                sleep(.75)
             camera.stop_preview() #stop preview
             GPIO.output(lightRing, False)
             os.system(makeVid) #send command to convert images to GIF
             print('uploading') #let us know photo is about to start uploading
 
             #upload photo to Tumblr
+
             tumblr.create_photo(
                 tum_user_name,
                 state="published",
-                tags=["ResistorAlliance", "gifotron"],
+                tags=["ResistorAlliance", "gifotron", "testing"],
                 data="images/animation.gif"
             )
             twit.PostMedia(
-                '#ResistorAlliance #gifotron',
+                '#ResistorAlliance #gifotron  #testing',
                 'images/animation.gif'
             )
+
             print("uploaded") #let us know GIF has been uploaded
 
             #turn on uploaded LED and play meow samples
@@ -105,10 +101,8 @@ try:
             sleep(0.2)
             GPIO.output(lightRing, False)
             os.system(meow2)
-            os.system(meow2)
-
-    GPIO.cleanup() #cleanup GPIO channels
 
 #hit Ctrl + C to stop program
 except KeyboardInterrupt:
+    GPIO.cleanup() #cleanup GPIO channels
     print ('program stopped')
